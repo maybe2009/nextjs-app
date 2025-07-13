@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html {
+  font-size: 16px; /* 确保根字体大小为 16px */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-ibm-plex-mono: "IBM Plex Mono", monospace;
+  --font-sf-pro: "SF Pro", monospace;
+
+  --color-brand-primary: #ff820c;
+  --color-brand-secondary: #70ab34;
+  --color-text-primary: #212121;
+  --color-text-secondary: #757575;
+  --color-text-invert: #ffffff;
+  --color-icon-default: #212121;
+  --color-icon-secondary: #494949;
+  --color-icon-invert: #ffffff;
+  --color-surface-default: #f4f0eb;
+  --color-surface-dark: #efe7dc;
+  --color-surface-light: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+.customize-text-h1 {
+  @apply font-sf-pro text-4xl/10 font-semibold;
+}
+
+.customize-text-h2 {
+  @apply font-sf-pro text-xl/7 font-semibold;
+}
+
+/* IBM Plex Mono 样式类 */
+.ibm-plex-mono-h1 {
+  @apply font-ibm-plex-mono text-4xl/10 font-semibold;
+}
+
+.ibm-plex-mono-h2 {
+  @apply font-ibm-plex-mono text-xl/7 font-semibold;
+}
+
+.customize-text-title {
+  @apply font-sf-pro text-base/6 font-bold;
+}
+
+.customize-text-body-bold {
+  @apply font-sf-pro text-base/6 font-semibold;
+}
+
+.customize-text-body {
+  @apply font-sf-pro text-base/7 font-normal;
+}
+
+.customize-text-caption {
+  @apply font-sf-pro text-sm/[1.375rem] font-normal;
+}
