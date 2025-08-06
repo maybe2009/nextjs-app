@@ -1,4 +1,4 @@
-import HomeIcon from "@/app/ui/home-icon";
+import HomeIcon from "@/components/ui/home-icon";
 
 interface NavItemProps {
   className?: string;

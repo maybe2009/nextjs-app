@@ -1,0 +1,12 @@
+export { default as ChevronLeftIcon } from "../../../public/icons/chevron_left.svg";
+export { default as DesertIcon } from "../../../public/icons/desert.svg";
+export { default as FruitIcon } from "../../../public/icons/fruit.svg";
+export { default as HeadPhoneIcon } from "../../../public/icons/heade_phone.svg";
+export { default as HomeIcon } from "../../../public/icons/home.svg";
+export { default as MeatIcon } from "../../../public/icons/meat.svg";
+export { default as MinusIcon } from "../../../public/icons/minus.svg";
+export { default as MoreHorizontalIcon } from "../../../public/icons/more_horizontal.svg";
+export { default as PlusIcon } from "../../../public/icons/plus.svg";
+export { default as SeafoodIcon } from "../../../public/icons/seafood.svg";
+export { default as SearchIcon } from "../../../public/icons/search.svg";
+export { default as ShoppingBagIcon } from "../../../public/icons/shopping_bag.svg";
