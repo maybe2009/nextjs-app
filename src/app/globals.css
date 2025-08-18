@@ -15,6 +15,8 @@ html {
   --font-ibm-plex-mono: "IBM Plex Mono", monospace;
   --font-sf-pro: "SF Pro", monospace;
 
+  --text-body: 2rem;
+
   --color-brand-primary: #ff820c;
   --color-brand-secondary: #70ab34;
   --color-text-primary: #212121;
@@ -127,6 +129,7 @@ html {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --text-body--line-height: calc(4 / 2);
 }
 
 .dark {

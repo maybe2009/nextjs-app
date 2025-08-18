@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function PopularCard() {
+export default function ProductCard() {
   return (
     <div className="">
       <div className="w-[172px] h-[123px] bg-text-secondary rounded-t-[8px]"></div>
