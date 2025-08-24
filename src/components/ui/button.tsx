@@ -22,7 +22,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // 自定义的按钮样式
         hw_ghost:
-          "text-body text-body--line-height hover:bg-brand-primary/20 hover:rounded-full hover:text-body hover:font-semibold hover:text-brand-primary",
+          "text-body font-body leading-body hover:font-body-bold hover:text-brand-primary hover:bg-brand-primary/20 hover:rounded-full",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -49,7 +49,6 @@ function Button({
     asChild?: boolean;
   }) {
   const Comp = asChild ? Slot : "button";
-
   return (
     <Comp
       data-slot="button"

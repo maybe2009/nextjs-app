@@ -1,22 +1,33 @@
-import { ChevronLeftIcon, ShoppingBagIcon } from "@/components/icons";
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Plus, Minus, BluetoothIcon } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
+import { useState } from "react";
 
 export default function Page() {
+  const [productCount, setProductCount] = useState(0);
+
+  const handlePlusClick = () => {
+    setProductCount(productCount + 1);
+  };
+
+  const handleMinusClick = () => {
+    if (productCount > 0) {
+      setProductCount(productCount - 1);
+    }
+  };
+
+  const handleCountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+      setProductCount(Number(value));
+    }
+  };
+
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
       <div className="">
-        <div className="w-full flex justify-between items-center px-4 py-2">
-          <div className="w-[44px] h-[44px] py-[8px] pb-[8px]">
-            <ChevronLeftIcon className="w-[24px] h-[24px]" />
-          </div>
-
-          <div className="w-[44px] h-[44px] py-[8px] pb-[8px] flex justify-center items-center">
-            <ShoppingBagIcon className="w-[24px] h-[24px]" />
-          </div>
-        </div>
-
         <Image
           src="/images/product_example.png"
           className="w-full h-[250px]"
@@ -42,15 +53,22 @@ export default function Page() {
 
       <div className="flex flex-col gap-y-2 w-full px-2 mb-4">
         <div className="w-full flex justify-between items-center bg-brand-primary/30 px-6 py-4 rounded-full">
-          <Button className="bg-transparent hover:bg-transparent border-none shadow-none">
+          <Button
+            onClick={handlePlusClick}
+            className="bg-transparent hover:bg-transparent border-none shadow-none"
+          >
             <Plus className="size-6 text-black" />
           </Button>
           <input
-            className="text-center outline-none appearance-none border-none pointer-events-none"
+            className="text-center outline-none appearance-none border-none"
             type="text"
-            defaultValue={0}
+            value={productCount ?? ""}
+            onChange={handleCountChange}
           />
-          <Button className="bg-transparent hover:bg-transparent border-none shadow-none">
+          <Button
+            onClick={handleMinusClick}
+            className="bg-transparent hover:bg-transparent border-none shadow-none"
+          >
             <Minus className="size-6 text-black" />
           </Button>
         </div>

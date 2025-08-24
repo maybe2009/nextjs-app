@@ -6,7 +6,6 @@ export default function ProductSearchPage() {
   return (
     <div className="w-full h-full flex flex-col justify-between items-center px-4 pt-4 gap-y-4">
       <Search />
-      <p className="text-hw-body">test test content</p>
       <div className="w-full flex items-center ">
         <Button variant="hw_ghost" className="flex-1">
           Fruits
