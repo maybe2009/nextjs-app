@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "check-all": "pnpm run type-check && pnpm run lint",
+    "dev:check": "pnpm run check-all && pnpm run dev"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
