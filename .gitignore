@@ -130,3 +130,5 @@ temp/
 
 # Local History for Visual Studio Code
 .history/
+
+/prisma/src/app/generated/prisma
