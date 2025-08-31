@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-export default function ProductCard() {
+export interface ProductCardProps {
+  id: number;
+  name: string;
+  price: number;
+  stock: number;
+}
+
+export default function ProductCard({ name, price }: ProductCardProps) {
   return (
     <div className="">
       <Link href="/product/detail">
@@ -9,10 +16,10 @@ export default function ProductCard() {
 
       <div className="w-[172px] gap-y-3 px-4 py-4 bg-surface-light rounded-b-[8px]">
         <div className="w-full h-[44px]">
-          <p className="customize-text-body-bold">Avocado</p>
+          <p className="customize-text-body-bold">{name}</p>
         </div>
         <div className="flex justify-between items-center">
-          <span className="customize-text-body">$2.5/ea</span>
+          <span className="customize-text-body">${price}/ea</span>
           <div className="w-[24px] h-[24px] rounded-[999px] bg-brand-primary">
             <svg
               className=" text-icon-invert cursor-pointer"
