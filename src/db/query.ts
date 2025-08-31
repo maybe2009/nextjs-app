@@ -3,6 +3,7 @@ import { db } from './seed';
 import { eq } from 'drizzle-orm';
 
 export async function getProducts(category?: string): Promise<Product[] | null> {
+  console.log(`getProducts,category: ${category}`);
   try {
     let query = db.select().from(productTable)
     if (category) {

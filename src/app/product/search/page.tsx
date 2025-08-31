@@ -3,8 +3,12 @@ import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/features/product_cart";
 import { getProducts } from "@/db/query";
 
-export default async function ProductSearchPage() {
-  const products = await getProducts("Fashion");
+export default async function ProductSearchPage(props: {
+  searchParams: { query: string; page?: string; category?: string };
+}) {
+  const searchParams = await props.searchParams;
+  const query = searchParams?.query || "";
+  const products = await getProducts(query);
 
   return (
     <div className="w-full h-full flex flex-col items-center px-4 pt-4 gap-y-4">
