@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import { getCloudinaryUrl } from "@/lib/cloudinary";
 
 export interface ProductCardProps {
   id: number;
@@ -11,7 +15,15 @@ export default function ProductCard({ name, price }: ProductCardProps) {
   return (
     <div className="">
       <Link href="/product/detail">
-        <div className="w-[172px] h-[123px] bg-text-secondary rounded-t-[8px]"></div>
+        <div className="w-[172px] h-[123px] relative bg-trounded-t-ext-secondary ">
+          <Image
+            loader={getProductImageUrl}
+            src="lychee_vmpkz2.png"
+            alt="product image"
+            fill={true}
+            className="rounded-t-[8px]"
+          />
+        </div>
       </Link>
 
       <div className="w-[172px] gap-y-3 px-4 py-4 bg-surface-light rounded-b-[8px]">
@@ -34,4 +46,24 @@ export default function ProductCard({ name, price }: ProductCardProps) {
       </div>
     </div>
   );
+}
+/**
+ * 生成产品图片的Cloudinary URL
+ * @param publicId Cloudinary中的public_id
+ * @param cloudName 你的Cloudinary cloud name
+ * @returns 优化后的产品图片URL
+ */
+function getProductImageUrl({
+  src,
+  quality,
+}: {
+  src: string;
+  quality?: number;
+}): string {
+  return getCloudinaryUrl(src, {
+    cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || "",
+    transformations: `c_fill,g_auto,w_172,h_123`,
+    quality: quality,
+    format: "auto",
+  });
 }
